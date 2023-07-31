@@ -42,8 +42,7 @@ const DetailedItem = ({ type, data, openEdit }) => {
   const history = useHistory();
 
   const { user } = useContext(AuthContext);
-  const { dispatch: materialsDispatch } =
-    useContext(MaterialsContext);
+  const { dispatch: materialsDispatch } = useContext(MaterialsContext);
   const { dispatch: tasksDispatch } = useContext(TasksContext);
   const { dispatch: doubtsDispatch } = useContext(DoubtsContext);
 
@@ -174,10 +173,12 @@ const DetailedItem = ({ type, data, openEdit }) => {
                 <h5 className="subject">{item?.subject?.name}</h5>
 
                 {item?.attachments?.map((a) => (
-                  <div className="filename">
-                    <DescriptionOutlinedIcon className="icon" />
-                    <h3>{a?.filename}</h3>
-                  </div>
+                  <a href={a?.link}>
+                    <div className="filename">
+                      <DescriptionOutlinedIcon className="icon" />
+                      <h3> {a?.filename}</h3>
+                    </div>
+                  </a>
                 ))}
               </div>
 

@@ -39,7 +39,7 @@ const Home = () => {
     recentDoubts?.length < 3 && getRecentDoubts(user, doubtsDispatch);
   }, [recentDoubts.length, doubtsDispatch]);
 
-  // console.log(recentMaterials, recentTasks, recentDoubts);
+  console.log(recentMaterials, recentTasks, recentDoubts);
   return (
     <div>
       <Navbar />

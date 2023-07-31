@@ -19,6 +19,8 @@ import IndividualTask from "./pages/individualTask/IndividualTask";
 import Doubts from "./pages/doubts/Doubts";
 import IndividualDoubt from "./pages/individualDoubt/IndividualDoubt";
 import AddSubject from "./pages/addSubject/AddSubject";
+import AddSchedule from "./pages/addSchedule/AddSchedule";
+
 import { AuthContext } from "./context/authContext/AuthContext";
 import UserUpdate from "./pages/userUpdate/userUpdate";
 function App() {
@@ -76,6 +78,9 @@ function App() {
               </Route>
               <Route path="/addsubject">
                 <AddSubject />
+              </Route>
+              <Route path="/AddSchedule">
+                <AddSchedule />
               </Route>
             </>
           ) : (

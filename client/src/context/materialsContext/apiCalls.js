@@ -27,9 +27,9 @@ export const getAllMaterials = async (user, dispatch) => {
       },
     });
 
-    console.log(`Coure.......${user.course}`);
+    console.log(`User......${user}`);
 
-    console.log(res.data);
+    console.table("ALL Materials", res.data);
 
     dispatch(getAllMaterialsSuccess(res.data));
   } catch (err) {
@@ -47,7 +47,7 @@ export const getRecentMaterials = async (user, dispatch) => {
       },
     });
 
-    // console.log(res.data);
+    console.table("REcent Materials..........", res.data);
     dispatch(getRecentMaterialsSuccess(res.data));
   } catch (err) {
     dispatch(getRecentMaterialsFailure(err));

@@ -6,13 +6,7 @@ import formatDatetime from "../../utils/formatDatetime";
 import { allClassesArray } from "../../dummydata";
 import dummyProfilePic from "../../assets/dummyProfilePic.png";
 
-const ItemMd = ({
-  index,
-  type,
-  status = "pending",
-  classTime = "9:30 am",
-  data,
-}) => {
+const ItemMd = ({ index, type, status = "pending", classTime = "", data }) => {
   let {
     _id: itemId,
     title,
@@ -76,10 +70,13 @@ const ItemMd = ({
               {type === "task" ? title : subject?.name}
             </h4>
             {type === "task" ? (
-              <div className="taskfile">
-                <DescriptionOutlinedIcon className="icon" />
-                <p>{attachments[0]?.filename}</p>
-              </div>
+              <a href={attachments[0]?.link}>
+                {" "}
+                <div className="taskfile">
+                  <DescriptionOutlinedIcon className="icon" />
+                  <p>{attachments[0]?.filename}</p>
+                </div>
+              </a>
             ) : (
               <p>{createdAt}</p>
             )}

@@ -6,13 +6,15 @@ import Navbar from "../../components/navbar/Navbar";
 import Sidebar from "../../components/sidebar/Sidebar";
 
 const AddSubject = () => {
-  const [subject, setSubject] = useState({
-    name: "",
-    course: "",
-    semester: "",
-  });
   const { dispatch } = useContext(SubjectsContext);
   const { user } = useContext(AuthContext);
+
+  const [subject, setSubject] = useState({
+    name: "",
+    course: user.course,
+    semester: user.semester,
+    teachers: user._id,
+  });
 
   const handleChange = (e) => {
     setSubject({ ...subject, [e.target.name]: e.target.value });
@@ -24,8 +26,9 @@ const AddSubject = () => {
     addSubject(user, subject, dispatch);
     setSubject({
       name: "",
-      course: "",
-      semester: "",
+      course: user.course,
+      semester: user.course,
+      teachers: user._id,
     });
   };
 
@@ -41,26 +44,6 @@ const AddSubject = () => {
               type="text"
               name="name"
               value={subject.name}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <div>
-            <label>Course:</label>
-            <input
-              type="text"
-              name="course"
-              value={subject.course}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <div>
-            <label>Semester:</label>
-            <input
-              type="text"
-              name="semester"
-              value={subject.semester}
               onChange={handleChange}
               required
             />

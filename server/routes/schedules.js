@@ -8,7 +8,7 @@ router.post("/", verify, async (req, res) => {
     const newSchedule = new Schedule(req.body);
 
     await newSchedule.save(function (err) {
-      if (err) res.status(500).json(err);
+      if (err) console.log(err);
 
       newSchedule.populate({
         path: "subject",
@@ -23,6 +23,7 @@ router.post("/", verify, async (req, res) => {
         function (err, doc) {
           if (err) res.status(500).json(err);
           else res.status(201).json(doc);
+          console.log("SCHEDULE ADDED");
         }
       );
     });

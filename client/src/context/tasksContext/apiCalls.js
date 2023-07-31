@@ -21,7 +21,7 @@ export const getAllTasks = async (user, dispatch) => {
   dispatch(getAllTasksStart());
 
   try {
-    const res = await axios.get("/api/task/all", {
+    const res = await axios.get(`/api/task/all?course=${user.course}`, {
       headers: {
         token: "Bearer " + user.accessToken,
       },
@@ -38,7 +38,7 @@ export const getRecentTasks = async (user, dispatch) => {
   dispatch(getRecentTasksStart());
 
   try {
-    const res = await axios.get("/api/task/recent", {
+    const res = await axios.get(`/api/task/recent?course=${user.course}`, {
       headers: {
         token: "Bearer " + user.accessToken,
       },
@@ -125,11 +125,15 @@ export const updateCommentInTask = async (comment, user, dispatch) => {
   dispatch(updateTaskStart());
 
   try {
-    const res = await axios.put(`/api/task/comment/${comment.commentId}`, comment, {
-      headers: {
-        token: "Bearer " + user.accessToken,
-      },
-    });
+    const res = await axios.put(
+      `/api/task/comment/${comment.commentId}`,
+      comment,
+      {
+        headers: {
+          token: "Bearer " + user.accessToken,
+        },
+      }
+    );
 
     // console.log(res.data);
     dispatch(updateTaskSuccess(res.data));

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
-import { classesArray } from "../../dummydata";
 import formatDatetime from "../../utils/formatDatetime";
 import "./style.scss";
 
@@ -20,22 +19,20 @@ const ItemSm = ({ type, index, data, noLink }) => {
 
   const history = useHistory();
 
-  useEffect(() => {
-    if (type === "schedule") setStatus(classesArray[index].status);
-  }, []);
-
-  createdAt = formatDatetime(createdAt);
-  day = "today";
-
   return (
     <>
       {noLink ? (
         <div
           className={
-            "itemSm " + type + (type === "schedule" ? ` ${status}` : "")
+            "itemSm " + type + (type === "schedule" ? ` ${status}` : "ongoing")
           }
           onClick={
-            status === "ongoing" ? () => history.push("/class/join/91c40469-3a0c-4672-8695-9274537e1bbd") : () => {}
+            status === "ongoing"
+              ? () =>
+                  history.push(
+                    "/class/join/91c40469-3a0c-4672-8695-9274537e1bbd"
+                  )
+              : () => {}
           }
         >
           <div className="column1">
