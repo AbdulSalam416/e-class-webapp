@@ -51,7 +51,7 @@ app.use("/api/classcomment", classCommentRoute);
 groupVideoCallSocket(io);
 
 // Port setup
-const port = process.env.PORT || 5001;
+const port = process.env.PORT || 5000;
 
 server.listen(port, () => {
   console.log("webdesk server is running on port:" + port);
