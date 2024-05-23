@@ -19,7 +19,9 @@ const HeroSection = ({ small, large, title, dept, sem }) => {
               ? dept + " " + sem + " sem"
               : `Hi ${user?.fullname.split(" ")[0]}!`}
           </h3>
-          <h1>{title}</h1>
+          <h1>
+            {title} of {user?.course}{" "}
+          </h1>
           {large && (
             <p>
               All your college schedule, notes, task, doubts will be updated
