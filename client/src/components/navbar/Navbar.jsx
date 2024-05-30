@@ -211,7 +211,32 @@ const Navbar = () => {
                   />
                 </ListItem>
               </Link>
-
+              <Link to="/addSubject" className="link" style={linkStyle}>
+                <ListItem
+                  button
+                  style={listItemStyle}
+                  onClick={() => setProfileOptionsDialogOpened(false)}
+                >
+                  <ListItemText
+                    disableTypography
+                    style={listItemTextStyle}
+                    primary="Add Subject"
+                  />
+                </ListItem>
+              </Link>
+              <Link to="/addSchedule" className="link" style={linkStyle}>
+                <ListItem
+                  button
+                  style={listItemStyle}
+                  onClick={() => setProfileOptionsDialogOpened(false)}
+                >
+                  <ListItemText
+                    disableTypography
+                    style={listItemTextStyle}
+                    primary="Add Schedule"
+                  />
+                </ListItem>
+              </Link>
               <Divider variant="fullWidth" />
               <ListItem
                 button

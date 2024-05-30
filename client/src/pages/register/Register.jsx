@@ -104,6 +104,10 @@ const Register = () => {
         <button className="btn" onClick={() => history.push("/login")}>
           Login
         </button>
+        <p className=" test">
+          No account? use Test account. email: test1@example.com
+          password:12345678{" "}
+        </p>
       </div>
     </div>
   );
