@@ -42,7 +42,7 @@ mongoose
 app.use(express.json());
 
 // routes
-app.get("/", (req, res) => res.send("Hello from Webdesk :)"));
+app.get("/", (req, res) => res.send("e-class web application backend index page :)"));
 app.use("/api/auth", authRoute);
 app.use("/api/user", userRoute);
 app.use("/api/subject", subjectRoute);
