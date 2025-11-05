@@ -22,6 +22,8 @@ import {
   ListItemText,
 } from "@material-ui/core";
 import { logoutUser } from "../../context/authContext/apiCalls";
+import {AddBox, PlusOne} from "@material-ui/icons";
+import Add from "@material-ui/icons/Add";
 
 const dialogTitleStyle = {
   display: "flex",
@@ -217,6 +219,7 @@ const Navbar = () => {
                   style={listItemStyle}
                   onClick={() => setProfileOptionsDialogOpened(false)}
                 >
+                    <Add style={iconStyle} />
                   <ListItemText
                     disableTypography
                     style={listItemTextStyle}
@@ -230,7 +233,9 @@ const Navbar = () => {
                   style={listItemStyle}
                   onClick={() => setProfileOptionsDialogOpened(false)}
                 >
-                  <ListItemText
+                    <Add style={iconStyle} />
+
+                    <ListItemText
                     disableTypography
                     style={listItemTextStyle}
                     primary="Add Schedule"
